@@ -9,3 +9,7 @@ class Author(models.Model):
     def __unicode__(self):
         return '%s %s' % (self.first_name, self.last_name)
 
+    class Meta:
+        verbose_name_plural = 'authors'
+        ordering = ['last_name', 'first_name']
+
