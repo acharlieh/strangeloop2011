@@ -1,0 +1,148 @@
+Python resources:
+Dive into Python - old book for learning python
+Learn Python the hard way - very basic baseline... ~ex 50 gets really hard
+
+Slides: lanyrd.com/2011/strange-loop/sfypm/
+Re: http://www.slideshare.net/jacobian/introduction-to-django-strange-loop-2011
+
+Presenter: https://twitter.com/jacobian
+
+Just ignore Python 3 for now. 
+
+Goal of this talk: Do you want to use Django? 
+
+Django is only python (no language extensions like rails). Nothing special or magic, or novel. 
+
+Documentation:
+http://django.me/design
+http://www.djangobook.com/en/2.0/chapter01
+
+
+Later learn about pip and virtualenv <- tools for python development. 
+
+A "project" = bucket for related code.
+
+-> edit project settings file.
+
+
+"Apps" -- think encapsulated pieces, plug & play / mix & match. nothing required in an app. 
+
+Django is not MVC... (no controller... and add a few other things)
+-- MVC is not for the web?
+
+How do you define a model?
+don't want SQL - Scary Quirky Language :)
+(tough, unversioned, not DRY, and "we like python")
+
+slug = last segment of a url. for example: http://nytimes/2001/90/bin-laden  (bin-laden = slug)
+
+How to define a model?
+use manage.py instead of django-admin.py
+
+python manage.py sqlall authors
+ -> see the authors
+python manage.py syncdb
+ -> Create the model... 
+ -> Django will not re-add or update the model, instead need a package called "south"
+
+<Model>.objects -> lazily hits the database... executes query when results are asked for...  so .filter() creates a query object, then when field used, the called. 
+
+== Model Metadata ==
+
+def __unicode__(self):   -> how to coerce an object in python into a string.
+
+python uses "magic methods" ... __len -> length
+
+http://django.me/models
+http://www.djangobook.com/en/2.0/chapter05/
+
+python manage.py dumpdata <app>  --indent=2  == data
+
+fixtures used to seed data.
+
+the re-eval loop doesn't pick up new files need to restart.
+
+_('string')  <- mark string for translation.
+
+
+Woo! End of Admin interface.
+
+
+Part 3: URLs, views and templates
+
+django tries to seperate data and content.... model -> view collects model -> template (transforms into semantic html) -> visual page
+
+First django uses ROOT_URLCONF in settings to figure out how to setup urls.
+
+urls matches only path component
+
+r'string'  == raw string (no escapes)
+
+3 rules for views.
+must be a function
+takes a request
+returns response.
+
+http://django.me/urls (contains nuances).
+
+So let's use a template!
+
+
+Restful: piston / tastypie for the interfaces. 
+
+Content-Negotiation: not builtin... see restful settings
+
+--- Templates
+
+Django... usually load from sites. 
+Use absolute paths. in the settings
+
+templates simple syntax
+
+{{ variable | <filters> }}
+
+these are defined in filters.py.
+
+tags {% %}
+
+python: Errors never pass silently, always throw exception. In templates though, usually pass silently.
+
+!!!template inheritance!!! (feature of django)
+
+first define base template, and have labeled "blocks" (placeholders).
+
+In actual template: 
+
+{% extends "base.html" %}
+
+then replace blocks.
+
+
+Inheritance tips... 
+
+{% extends %} must be the first thing in your template (not whitespace/comments), lest odd error.
+* More {% block %}s are better... template caching is good now :)
+* You can have a block in a block, but cannot change nesting in child templates.
+* If duplicating content, you're missing a block. ( {% import %} )
+* {{ block.super }} -> good for modifying parent block content.
+
+http://djangobook.com/en/2.0/chapter04
+http://django.me/templates
+
+What else?
+- Forms, model forms, form sets, data validation
+- File Storage - local and remote & static assets
+- Cookies, sessions (db storage default, or cached), authn/z
+    - django authority adds granular permissions
+- GeoDjango - django.contrib.gis - geographic data built in.
+- Built in protection for SQLi, XSS, CSRF
+- i18n and l10n support
+- Generic views, abstract many common views you'd write.
+
+Community:
+django-users - 20k people
+IRC: freenode/#django - many people there
+
+Learning: 
+Docs!
+
