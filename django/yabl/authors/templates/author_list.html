@@ -1,0 +1,12 @@
+<!DOCTYPE HTML PUBLIC "-­‐//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+    <head><title>Authors</title></head>
+    <body>
+        <h1>Authors ({{ authors|length }} total)</h1>
+        <ul>
+            {% for a in authors %}
+            <li><a href="{{ a.id }}/">{{ a.first_name }} {{ a.last_name }}</a></li>            
+            {% endfor %}
+        </ul>
+    </body>
+</html>
