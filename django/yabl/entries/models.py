@@ -9,8 +9,11 @@ class Entry(models.Model):
     is_published = models.BooleanField(default=True)
     headline = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
-    summary = models.TextField()
+    summary = models.TextField(blank=True)
     body = models.TextField()
 
     def __unicode__(self): 
         return self.headline
+
+    class Meta(object):
+        verbose_name_plural = 'entries'
