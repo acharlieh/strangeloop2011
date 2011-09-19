@@ -1,0 +1,149 @@
+A Tale of three trees. 
+
+Resources:
+http://git-scm.com 
+http://gitref.org
+
+How Git Works (through reset)
+
+"It's all about the trees, baby"
+A system for storing trees (files and subdirectories)
+
+There are 3 trees in git, and reset is for manipulating them. 
+
+Every commit, I want a (full) snapshot of what my project looks like right now...
+
+There are 3 trees.
+
+Tree 1: the HEAD! A pointer to the current branch. The last commit (what your working directory should be).
+
+cat .git/HEAD
+ref: refs/heads/master
+
+cat .git/refs/heads/master
+<a sha>
+
+git cat-file -p <a sha>
+Other sha
+
+git tree Other sha
+
+
+Second tree: 
+the staging area
+
+git ls-files
+
+Third tree:
+the working directory! (is a snapshot :) ) 
+
+All 3 of these should be talking about the same project (roughly).
+
+When you checkout, you move HEAD to the working directory. 
+When you stage files (git add), you overwrite the hashes of the Working Directory into the Index
+when you (git commit) you record the Index into HEAD
+
+
+HEAD is last commit, and next parent
+Index is proposed next commit (git commit doesn't look at working directory at all)
+Work Dir is sandbox
+
+"Vim if you're cool, Emacs if you're older"
+
+
+Working with Trees!
+
+git status -> shows differences between the trees. 
+
+git reset is a tool to manipulate these three trees. 
+
+2 forms
+
+1) git reset [commit] [path] opposite of git add [file]
+
+i.e. pull from HEAD (or the specified commit) to the index. Including resetting Index to an older file.
+
+(reverting a file in the index tree without changing your working directory!)
+
+
+2) git reset [commit] (works on trees as a whole). 
+
+does 3 steps (options say where you stop):
+git reset --soft [commit] moves HEAD to point to some other target. (no changing files, or working directory)
+git reset [--mixed] then pulls the HEAD into the Index. 
+git reset --hard then copy index to the working directory. (not working directory safe!)
+
+If you want to undo commit: git reset --soft HEAD~
+undo git commit, then git add: git reset HEAD~
+
+WTFWIEWTUT 
+
+git add -p --> uses the index tree for partial editions.
+
+Can use this to squash 2 commits into one. (instead of git commit --amend) 
+
+or infinitely many commits: 
+git reset --soft HEAD~2 ... 
+git commit
+
+</reset>
+
+Scott "Dragon" Chacon
+
+
+git checkout (just a bit outside)
+
+2 forms
+
+git checkout [commit] [path]
+
+git checkout [path]
+
+
+Checkout moves HEAD, but reset changes the tree HEAD points to.
+
+Cool table: schacon.github.com/resetvcheckout.tml
+
+Act 3: Fun with trees.
+
+get add --patch [file] : hunk adds 
+git reset --patch (commit) [file] :can unstage pieces of files.
+git checkout --patch (commit) [file] :revert certain pieces of files. 
+
+cool stuff with git. (plumbing commands that can use when you understand it's all 3 trees).
+
+rev-parse (take any string and git can and tell you the sha it's pointing at)
+
+git rev-parse origin/master
+git rev-parse master-163^2-3^2 
+
+(go back 163 times, go to 2nd parent, 3 back then, 2nd parent of that)
+
+git hash-object -w  use as a object... can use as a key value store
+
+
+git ls-tree (show any 
+git ls-files (shows staging area)
+
+read-tree (subset of reset)
+
+update-index (add a file entry into the index tree). 
+
+write-tree (subset of commit)
+
+commit-tree (create a commit object artificially). 
+
+update-ref (update a branch to point to a commit object)
+
+symbolic-ref (move HEAD around)
+
+Plumbing cheat sheet!
+http://bit.ly/plumbing-cheat
+
+Use a script to have git automatically track your working directory with cron! (see slidedeck)
+
+Other possibility: Update ghpages without changing branches.
+
+Tweet @chacon with an interesting git script and get a t-shirt.
+
+use reflog to get everywhere HEAD has been ("not in a dirty way")
