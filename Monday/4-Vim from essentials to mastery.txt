@@ -1,0 +1,240 @@
+Bill Odom - vimgeeks.org
+
+Going to start from the basics, and give guideposts to becoming a master. 
+
+"If vi is a shark, vim is a shark with frickin laser beams on it's head"
+
+vim is a 
+Modal Text Editor
+
+built by bram bulinar for amiga. based on vi, which was written in 1976
+
+So why bother? 
+
+Sales Pitch!
+
+VIM is Multi-Language (how to syntax-highlight/indent)
+Multi-interface
+Multi-platform (runs on windows)
+
+Active community! 
+Redicoulously configurable & powerful
+Good for you
+
+Good for kids
+:help uganda
+
+The fine print: learning wall to get onto vi
+
+real:reasons
+save time
+--Think and happens now that trained
+
+Reduce Tedium
+
+Remain Sane
+Have fun
+
+/////
+
+"Use a single editor well" - prag programmer
+
+Goals of this talk: 
+* How to get started
+* A few big ideas
+* Lots of tips
+* Discussion, questions, comments
+
+Not going to fight the editor war
+
+"Escape Meta Alt Control Shift"
+
+Step 1: get started... Don't try to do it all at once. 
+
+Get a version of it make you abandon everything you already know. There's more power every time you take a few minutes. 
+
+-------------------------
+
+Getting Vim! Unix or Linux Done... vim.org
+MacOS X: code.google.com/p/macvim (terminal and gui... finagling to replace terminal version)
+Everyone else: vim.org/download.php
+
+
+Getting help: 
+:help
+:help :help
+:helpgrep - grep through the help
+:help!
+:h42
+:h holy-grail
+
+If you don't know what it's called, google for the term, and then read the help
+
+---------------------
+Modes:
+
+Insert Mode
+Normal Mode
+Command Mode
+Visual Mode
+Select Mode 
+Ex Mode
+Operator-pending Mode
+Replace Mode
+Virtual Replace Mode
+Insert Normal Mode
+Insert Visual Mode
+Insert Select Mode
+//////
+
+Insert mode: Typical text entry and basic editing
+arrow keys (and mouse) work
+Lots of ways to get there... (more than just
+i I
+a A
+c C
+o O
+r R
+s S
+
+maps and macros can build 
+<Esc> to get out
+<C-O> to temporarily get out (do a normal mode command, and then get out)
+
+
+Normal Mode
+** Moving around
+** More complex editing
+** Default mode
+
+hklj - left up right down ---- but there are better ways to move around
+
+H M L  (high middle and Low on your screen)
+
+gg - go to top of file
+
+123G - line 123
+
+Many more motions but Arrow keys and mouse still work!
+
+normal mode, with wrap... j jumps by physical line
+gj gk - moves by screen lines. 
+
+
+travelling without moving: 
+zz - shift the current line to the middle
+zt -- to the top
+zb -- to the bottom
+
+
+:let &scrolloff=999-&scrolloff
+-> Keeps your current line in the middle of the screen
+
+Instant searches
+* (search for word forward)
+# (search for word previous)
+g*
+g#
+
+completion - Insert mode
+<C-N
+<C-P
+<C-X<C
+
+Normal mode: the magical . command - redo the last thing you did at your current line
+
+Command-Line Mode (: / ? !) 
+-> Ex, search, filter (use external utilities)
+
+Visual Mode
+--> select text and operate on text.
+
+Visual, Visual Line, Visual Block
+
+//// Resources
+
+github - man vim environments
+https://github.com/wnodom/wnodom-vim-environment
+
+
+tim pope -> git plugin for vim. 
+
+Steve Losh's Vim Environment
+https://github.com/sjl
+
+Janus Distribution of Vim (useful distribution)
+
+Many more
+
+//// Plugins
+
+NERD Tree - good project drawer  - a vim buffer that happens to be a directory tree. 
+
+Command-T
+PeepOpen
+FuzzyFileFinder -> with a keystroke, pops up lists of files in current files and fast to roam around a project directory
+
+BufExplorer
+
+Taglist - auto runs ctags for files in background
+
+//// Registers
+
+What is a register: Store a chunk of text, like the system clipboard
+
+Unnamed register (yank, put already use this one)
+26 named simple registers accessed as "a through "z
+
+Can append to them using "A through "Z
+
+There are numbered registers -> "1 to "9 as recent deletes
+
+:reg lists the contents of many registers.
+
+Other registers!
+"% current filename
+"# last filename
+"- last small delete
+". last insert
+"/ last search
+": last command
+
+In insert mode ^R-register to paste into the vim
+
+"= expression
+
+"* - System clipboard
+"+ - System selection (X112
+
+"_ - blackhole register
+
+in normal mode "<register><operator>
+
+example: 
+"gdd -> delete line into register d
+"gp -> insert register d
+
+In insert mode: <C-R>
+
+can copy into register mode. 
+
+:let @a = ""
+
+macros used in registers. 
+
+Expression register, used for maps and other interactive 
+<C-R>= (calculator)
+
+"*yy yank into OS Clipboard
+"*p paste from the OS clipboard (more reliable through a terminal window).
+
+/// Buffer management Plugins
+BufExplorer -
+MiniBufExplorer - 
+
+Get used to shortcuts for commands -> @: (for repeating commands). 
+
+/// for libraries, don't do it it as macros, do it as keymaps
+keymappings are fundamental ways of changing key remappings
+
+vimtips wiki for how to figure out... 
