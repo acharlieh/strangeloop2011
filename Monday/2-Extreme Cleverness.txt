@@ -1,0 +1,90 @@
+Functional Data structures in Scala
+
+Sequential structure -> preserves order, slow to middle, fast to head or tail
+Associative structure -> consistent access to any element in roughly same time, non-preserving insertion order
+
+Processors and architecture considerations. 
+
+What is a functional data structure?
+
+Immutable!!!! but can make a copy
+Each change, you need to make a copy
+
+but copy on write is slow.
+
+We want comparable asymptotic performance
+but we want non-degraded versions
+--- goes to "structural scaling" 
+
+///Sequential DS
+
+"Singly linked list" -> classic
+
+Complexity o(1) first/prepend and O(n) for everything else.
+
+
+A list is either a cons cell with a value and the rest of the list or an empty list (nil)
+
+These are the only cases!
+
+In scala. 
+
+What does it teach us about structural sharing
+
+val foo = a :: b :: c :: d :: Nil
+
+val bar = H :: foo.tail
+
+How about bankers' FIFO queue?
+
+Linked list doesn't quite work... because insertion will be O(1) but removal will be O(N) 
+
+Last is nearly constant time.
+
+Naive persistent queue. 
+
+two lazy singly linked lists, front list (for dequeue), rear list(enqueue
+
+periodically reverse rear into the front
+
+--Amortization argument
+"Most of the time it is legitimately fast, some of the time it is slow"
+But the few slow operations happen exponentially less often, and hand waving.
+
+Lazy is the key on the linked lists. 
+
+Reverse and concat are constant time building the structure. 
+
+Want a functional data structure.
+
+2-3 finger tree! double ended queue impressive on paper.
+
+want fast 
+
+Trick to 2-3 finger tree... pull up multiple to the end.
+
+See it graphically. 
+
+But very Incredibly slow.
+
+Associative data structure. RedBlack tree (okasaki)
+-> Invariants every path from root to a leaf must have same number of black nodes
+-> no red node has a red parent
+
+"Fast mergable integer trie" - Patricia Trie
+
+Trie = Data in the leaves. 
+
+Branches only contain parts of the heys. 
+
+Bitmapped Vector Trie (from clojure. Analog to java.util.ArrayList)
+O log,base32(N) ~~ O(1) if you fit in memory.
+
+Faster than arrayList due to locality of reference (due to architecture)
+
+Cache misses in 2-3 finger trees due to heap locality. 
+Okasaki, Purely Functional Data Structures 
+R-B Trees in a functional settings
+Osasaki
+
+http://github.com/djspiewak/extreme-cleverness
