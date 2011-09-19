@@ -1,0 +1,136 @@
+Dr. Gerald Jay Sussman - MIT
+
+We're in trouble - Haskell is the most advanced of the obsolete languages
+
+Kanizsa's Triangle Illusion - we don't know how to compute this like an eye can see the triangle that isn't there
+
+Need a high level language like DNA - Flexible... 
+Salamander can regrow limbs (and grows extra elbows if you reverse a segment of its arm)
+
+No longer necessary to minimize operations / worry about memory. Is necessary to minimize latency. 
+
+Most of the cost of computing is the developers. - Huw Evans, Department of CS, The University of Glasgow
+
+Code is not adequately evolvable that they can fit into places the designer didn't intend. 
+
+We program ourselves into holes. And need to find ways of minimizing cost of changing the decisions that we make.
+
+Traditional generic arithmetic in scheme
+(+ 1 2 3)  (+ 1 (/ 2 3)) (+ 1 (sqrt -4)) ... etc. 
+
+With assembly language, you could compute the next computation that you could compute. 
+
+Symbolic Arithmetic -> can help you have compute what to compute.
+
+Automatic differentiation as a generic extension. --- HyperReal numbers x+delta(x)... 
+
+Derivative Computation ?
+
+Space path, Lagrange's equation... 
+
+Celetial Mechanics... equations are 20 pages long. Idea... what is needed to make things more flexible??? 
+
+Usually we have to prove specialized things, build a big tower of stuff to do a specific thing. 
+
+The old stuff doesn't break, just the new stuff is not proved!
+
+Proof may not be possible. 
+
+Potential problems!
+Everything today looks like the IBM 650. what if we change the form? Smart walls, made of computing sand???
+
+Around 1975 - Propogators
+
+Expert person - looks at the diagram. considers environment and figures out how things work
+
+How do we get students to think this way
+to 
+
+Hired Stallman and wrote a program to show students on how 
+
+lambda calculus you use for functions are much more flexible and can be used for other things. 
+
+You can make a test harness with units, generic extensions etc. Get the computer to compute things... and then ask the computer why? (spits out QED).
+
+Get the computer to do what the expert did and figure out how information is propagated around. Big idea in 1975
+
+
+The Propagator Idea
+
+Independent stateless machines & connecting stateful Cells. 
+
+Information is allowed to go in any direction.... But even better a great breakthrough was here... 
+
+A cell contains a monotonically increasing value about a cell. Building blocks for these machines
+
+It's
+
+"I hate computer languages now"
+
+c languages are full 
+
+expressions have 
+
+Expressions have anonymous connections. Propagators: all connections are explicit!
+
+Lambda glue is good for getting things going.
+
+Imagine you had as much processor as you had memory... It's gonna happen. 
+
+now can make your machine iterative... Now you can make your machine recursive.... and have multiple outputs.
+
+can have policies 
+
+A real engineer doesn't want an religion of how to solve an overall problem... we want the each little problem to have it's own best solution, and all of them to work together. 
+
+It's a different way to think... we need to get 52 ways to think. 
+
+Multi-directional constraints for propagators. 
+
+"Multiplication is a lie... because multiplication by 0 has special properties). 
+-----
+All Operators are Extensible Generics
+Cells Merge Information Monotonically.
+
+Sunlight and similar triangles. use the shadow of the barameter and the building to get an idea... then throw the barometer off the building and get more informations & improve the guesses...
+
+Monads Pipe around information, and carry along information
+
+??? make values contingent on other information.
+
+----
+Truth maintenance Systems -> invented by stallman & self and given name by grad students
+
+What is best estimate of what's going on, with the ability to back out. Paper on why all medical research is wrong(?)
+
+What happens if you get a contradiction?
+
+Locally-Consistent Worldviews
+
+
+Don't crash; Chuckle!
+use Dependency-Directed Backtracking (because we know where every fact came from!)
+
+---- 
+Use tms with locally consistent worldviews? for logical puzzles
+
+----
+Jerry Letcham - measured potentials for neurons. 
+
+all cells in Central nervous system are really tiny. Idea: neurons adjust sensitivity
+
+Diagram is a memory... and solution is to fill in details
+
+
+----
+
+Summary: Provlem is evolvability v. Correctness
+* Extensible generic operations may help
+-> Extend function without modification, but unprovable
+* Propagator Architecture unlocks freedoms
+-> Concurrent and parallel computing
+-> redundent and degeneracy (many ways of doing something)
+-> Maintain Provenance
+-> Dependency-Directed Backtracking (useful way to control Non-Deterministic Search)
+
+
