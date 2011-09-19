@@ -1,0 +1,165 @@
+Erik Meijer - Google
+
+Databases and Distributed Systems :) / Category Theory
+
+"Iconoclast" ... Currently No fundamental understanding of NoSQL, what it really is, make a more informed decision. 
+
+What is the essence of nosql?
+
+BigData is all about diversity (also an unfortunate name)... 
+
+Big data is not about volume/size, it's about multiple dimentionality. 
+
+Pick a point on the cube. Velocity (push/pull), data model.
+
+Different database systems have different properties. 
+
+Don't focus on only big v. small when picking a database solution. (cube diagram)
+
+
+////
+
+noSQL is the dual of SQL in terms of data Variety.... foreign key relation v. Key Value pairs.
+
+Should be called "coSQL" being a dual. 
+
+////
+
+Objects v. tables
+
+RAM is a k-v store. given address get object
+
+Tables think SQL.... Objects are very similar to objects (noSQL). 
+
+"I do consider assigment statements and pointer variables to be abomg computer science's most valuable treasures" - Donald Knuth.
+
+////
+
+Amazon SimpleDB edample.
+
+Model object as a class.
+
+Think in memory how the graph structure looks like.
+
+////
+
+50's... everyone would use the relational databases. "normalizing is abnormalizing your data"
+
+SQL cannot express collections, very impertitive, have to update tables. 
+
+
+Referential integrity must be maintained by environment.
+
+SQL, broken into small pieces and then have to join together... not straightforward.
+
+Relational model is not compositional. Reason about the model.
+
+
+///
+
+In mathmatics, semantics and philosophy of language. the philosophy of compositionality is the principle  that the meananing of a complex expression....
+
+
+///
+
+Objects.... value ::== scalar or view { name = value } 
+Value ::= view ( name = scalar )
+
+///
+There is a Benefit to tables though!!!! Relational world = closed system, nothing is arbitrarily deep! 
+
+Object world = Open world = could be arbitrarily deep. 
+
+////
+
+Tables -> Query results denormalized, query can only return single table(?)
+Null semantics are a mess: Sum(1,NULL) = 1 but 1+ null = null
+
+////
+
+"There is nothing new in computer science. All ideas have been rehashed at least 5 times"
+
+Impedance Mismatch, coined in 1984, issues with multiple languages. 
+
+So how can we make this productive?
+
+////
+
+People have been trying to do O-R mapping to bridge the gap between objects and tables. 
+
+////
+
+have to be efficient with joins. Relational database has precomputed joins (indexes) to speed up joins.
+
+////
+
+Naranath the Lunatic - indian(?) myth of pussing a stone up a hill. 
+
+////
+
+If you have a hard problem, math comes to the rescue.
+
+///
+
+Arrays in the object model don't have seperate collections. 
+
+/// 
+
+Relational model v. FK/PK model is that the arrows are reversed. 
+
+Relational -> FK points to the PK
+
+Object model -> Parent (PK) points to children. (FK)
+
+///
+
+"Category theory" 
+
+///
+
+Warning: Amateur Catagory Theorist at Work
+///
+
+We look at the type, what interface does this implement. Objects and arrows
+
+Functional programming... what is the interface implemented by a function.
+
+
+Category theory, and interface for functions!
+
+"Duality" -> If you have a category and reverse all the arrows, you have the dual in which all properties hold!
+
+
+It's not a matter of emotion, picking SQL/noSQL you can pick by which way your arrows need to go!
+
+-------
+
+noSQL is coSQL! not in conflict... harmony 
+
+yin -> open -> coSQL
+yang -> closed -> SQL
+
+transmute into eachother with OR mappers!
+
+/////
+
+Consequences of Duality
+
+If a statement T is true in C then its dual co(T) is true in co(C)
+
+
+
+/// 
+
+SQL -> Can know if objects are identical by PK
+Object -> Cannot know if objects are equal (since you have only the value, not the pointer). 
+
+///
+
+SQL -> have to have transactions "Stop the world"
+
+
+
+///
+
+Scalable / not scalable follows from open/closed
