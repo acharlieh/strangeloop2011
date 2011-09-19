@@ -1,0 +1,68 @@
+Monads made easy
+
+Prelude
+- Functional Programming
+-- Function composition (point free)
+
+- Clojure for examples
+
+
+Why Monads?
+-> Programming and Scaling by Alan Kay
+==> Monads let you write DSLs
+(Clean elegant, usable)
+
+Function composition -> New functions from exisiting ones
+
+(def new fn (comp fn1 fn2) )
+
+fn2 produces a result that is passed into fn1
+
+suppose you had a bunch of cunctions that took a value of any kind and returned a list of values
+
+half double (x) -> list[x/2,x*2]
+
+But you can't pass value to the increase function for class cast exception.
+
+Need an applicator to take value and do the 
+
+(mapcat increase value)
+
+(defn m-bind [v f] (mapcat f v))
+
+call mbind with a single value
+
+m-result list
+m-result / m-bind
+
+(sequence monad)
+
+Every monad, has bind and result function and Obey 3 monad laws. 
+
+monadic values list
+
+In haskell you have a type operation. 
+
+So what? Function composition using monadic chaining. 
+
+Eric Meijer -> 
+
+A Monad -> A type Signature, mResult function, and mBind function (functions obeying the 3 monad laws.
+
+
+The state monad... the wrapped values are functions...
+
+(state -> value, state)
+
+Most useful monads have already been defined... especially as you start combining them. 
+
+----
+-ugh-
+
+Resources: Speaker self promotion:
+github.com/jduey/appraiser
+intensivesystems.net/writings.html
+
+
+Better: http://www.haskell.org/haskellwiki/Monad_Laws
+
