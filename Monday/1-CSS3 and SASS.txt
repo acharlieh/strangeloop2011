@@ -1,0 +1,189 @@
+What is CSS
+
+CSS want to separate format and content. 
+
+How do you identify an element? (all with a name, all with a class, the one with a unique id, and a relationship)
+
+Can do layout without tables!
+
+CSS3 - many documents 
+
+3 ways to specify:
+1) HTML Style attribute
+2) Style element
+3) Link element inside head element in html (external)
+
+CSS rules
+
+selector-list { property list } 
+
+Can only have one element with a given id???
+
+Selectors: Descendents (context) or direct children with > 
+
+the Box model
+
+Content (padding) Border (margin) for all 4 sides!
+
+a:first-letter, :hover (pseudo class)
+
+/// Now CSS3!
+
+Current browsers: some features unsupported, others experimental.
+
+http://caniuse.com
+http://thebookofcss3.com/resources
+
+Experimental: means you need a vendor specific prefix to use the property:
+
+-ms-  for IE
+-moz- for Firefox
+-o- for Opera
+-webkit- for Safari/Chrome
+
+And then need the generic property name for when you need to get rid of the experimental!
+
+Cool features of CSS3:
+
+Media Queries!
+- Detect what size of browser you are on, and flex based on that
+http://www.w3.org/TR/css3-mediaqueries
+
+Fonts Level 3!
+http://www.w3.org/TR/2011/WD-css3-fonts-20110324/ (working draft 24 March 2011).
+Dynamically get a different font file
+Can add shadows to text, and can have multiple shadows
+
+Letterbox and text strokes
+
+Multi-column Layout!!!!
+* Can pick how many columns there should be
+* or give fixed width for columns
+* specify size and spacing of lines
+
+Backgrounds and borders!!!!
+* multiple backgrounds
+* Rounded corners 
+* Border/box shadows
+
+Image Values and Replaced Content!
+* Gradients and many other features
+** Can have multiple gradients on a box
+
+FlexBox!
+* In a lot of flux currently (Warning on property changes)
+*** specify elements that are grouped together (in rows and columns)
+*** and can specify groups and assign numbers as to how much space should it take up?
+*** Can do rows and columns. 
+** Can take text and center it in a box! (hard to do in css 2, when multiple lines)
+
+Transitions!
+** If change property, takes time to move from one to another
+** Transforms Take 2 seconds to get there, and control of timing function
+
+2D Transforms!
+* translation, rotation, scaling
+
+3D Transforms!
+(webkit & ff? not tested in IE)
+* play with z axis!
+* hover / click are pseudo elements
+* Can use javascript
+* Translated along Z axis
+
+
+!!!SASS - 
+Syntatically Awesome Style Sheets
+
+Implemented as ruby, but don't need to know ruby
+Requires ruby to run
+
+Features: 
+variables - no repeating
+nesting - avoids repeating selectors
+Mixins
+selector inheritance
+
+http://sass-lang.com/
+
+sass -v -> get version
+
+Errors in input in css
+Link to generated .css files not .scss files
+
+sass syntax (original, concise, similar to python with indentation (.sass)
+scss syntax ("Sassy CSS", extension of CSS3 syntax, extension .scss, preferred)
+
+sass uses file extension to determine syntax used.
+
+nesting used to not repeat groups. 
+
+sass:
+#main
+    color: blue
+    font-size: 18pt
+    a
+        font:
+            weight: bold
+            Family: serif
+    &:hover
+        font-color:red
+
+sass-convert can change between tht two
+
+
+style option, styles the css output
+
+logically nested (default) nested
+expanded, compact, compressed
+
+**Sass watch option
+
+watch a sass directory and generate css
+
+sass --watch <sass dir>:<css dir>
+
+Sass supports comments /* */ (carries through) but also // (stripped out)
+
+Almost a Whole programming language
+- Can have values, and can compute property values, and use interpolation. dynamically generate
+
+conditional logic, loops, debugging / functions
+
+-Variables $name
+
+Assigned like properties $name: value  (inside a rule, or global for a stylesheet)
+
+math functions
+
+$halfWidth: $width/2 - $padding - $borderWidth/2;
+
+-Interpolation
+Used to compute selectors, propertyNames, propertyValues
+Generate #{expression}
+
+- Data Types
+Boolean / number (with units, if they can be compared!!!) / String / Color / List
+
+- Functions (color: invert, compliment, mix... call a function, positional or keyword)
+
+- Import sass files into others. (functions and definitions)
+
+- Selector Inheritance. 
+
+extend .warning
+
+- @mixin name(with parameters, default values), lets you have multiple to not have to specify vendor specific rules each time. 
+
+- Custom functons -> generate single value versus mixin generates multiple lines of CSS
+
+
+Recommendations!
+- Rename .css to .scss
+- Over time replace each 
+- Use compass mixins for setting common sets of properties
+   -- compass on top of sass with mixins... 
+   -- property css reset (helps pages look the same in every browser
+   -- blueprint layout
+
+
