@@ -1,0 +1,3 @@
+[submodule "workshops\\node-intro"]
+	path = workshops\\node-intro
+	url = git://github.com/ach-l/half-day-node.git
