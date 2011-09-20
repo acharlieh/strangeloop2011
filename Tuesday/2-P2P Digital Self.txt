@@ -1,0 +1,110 @@
+Jeremie Miller
+@jeremie
+@lockerproject
+
+lockerproject.org
+
+A p2p Digital Self with telehash
+
+Protocols are a strange loop... created by software developers, from experiences of sofware developers, who create experiences for other developers, etc. 
+
+For example: HTTP 
+
+"There are many parts of the original dream which are not yet implemented"... TBL
+
+History:
+
+NAT -> plantations of slave IP addresses which can only be clients. 
+
+DNS: Started out free and accessible, now tiered protocol design allowed complete control & commercialization
+
+Web became a separated system server group & client group.
+
+P2P, let everyone be a server --> all used for = filesharing and Skype
+
+Good Experiences
+
+Advent of an API as a protocol... return of the mainframe...? 
+
+Started with radically distributed systems, and reenslaved ourselves...
+
+... ... ...
+... ... ... 
+
+Every point that we go through for sharing centrally in the cloud, we go through different terms of service, and that resists the flow of our information.
+
+I am my stuff. and this stuff is everywhere. Only happening at the services discression, and access can go away unexpectedly.
+
+More and more data that they share, the more that space becomes their personal space, and people (ads) intrude into their personal space.
+
+Popular tools are good for everyone, but great for noone. 
+
+
+Assertion: We need to be able to move data directly peer to peer. Not through a service
+
+How do we do this? Lots of work. 
+
+Tried Distributed hash tables... Kademlia implementation (Simplicity + scale)
+
+Need DHT in order to have peer to peer.
+
+There's a paper that proves how it scales.
+
+Kademlia is a connection of nodes. Not the application on top of it. 
+
+Enter TeleHash... Minimal wiring to get data. 
+
+Switches send Telexes (UDP JSON)... 
+
+Pub/Sub network ( Subscribe to listen to other publishes). 
+
+
+Telehash is not a content Transport, there is no trust (anonymous peers), and no identity (just hashes)...
+
+Now The Locker Project (open source project around personal data).
+
+Have your data in a place where you can control. Have your social identifiers and connect P2P
+
+"Has to gather your things and make it awesome."
+
+home temp / biometrics / gather them 
+
+
+node.js core, local web services (js, python, php, ruby), http & JSON... platform first for utility
+
+discover other hashes... 
+
+/LockerProject/Locker
+
+"The Unhosted Project" -> similar in want to give people place to publish... and doesn't solve the addressing.
+
+Firewalls and NATs still a problem
+
+Freenet / Chord / Pastry -> What did you find lacking? over Katalina. Smallest
+
+Related: Managerie White Paper
+
+......
+
+Who am I? Get IP address : Port and ask seeds for self id, and gets other peers. 
+
+Things that talk to the internet and mirror that down... 
+Populate collections (a common model)
+
+Synclets pull data from services and aggregate them together. 
+
+Search through content of any link anyone has shared with you.
+
+Keep data on mongo locally...and on json on disk.
+
+......
+
+Tackled social media as low hanging fruit for social media to get people interested. 
+
+......
+
+Right now it's hard to setup... Developer only. 
+Goal is to ship a VM that anyone can run / self-executable. 
+
+Team of ~ 10 people, and 20 external contributers for own company Singly
+ 
