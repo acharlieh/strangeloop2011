@@ -238,3 +238,9 @@ Get used to shortcuts for commands -> @: (for repeating commands).
 keymappings are fundamental ways of changing key remappings
 
 vimtips wiki for how to figure out... 
+
+
+////
+Slide Links: 
+http://www.vimgeeks.org/2011/09/vim-from-essentials-to-mastery.html
+Direct: http://billodom.com/vim/vim-from-essentials-to-mastery-2011.pdf
