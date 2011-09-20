@@ -1,0 +1,139 @@
+David Geary
+
+This presentation is entirely HTML5
+
+slides.html5rocks.com to make some slides. (Added a fade-in function.)
+
+"Am I really going to write user interfaces with print interfaces generating html?"
+"Unfortunately"
+
+Server-side java sucked the fun out of my life.
+
+2011 The wonderful world
+
+Core HTML5 Canvas - Demos and Code, Firehose of a talk
+
+Time for canvas! (A clock)
+
+Canvas API: you have attributes (unsigned long width, unsigned long height -> drawing size)
+
+Methods:
+getContext
+toDataUrl
+toBlob <- unsupported
+
+Very similar to AWT/Swing
+
+Reference to canvas, get the context and do all sorts of stuff
+
+With the graphics context: you can do drawing and painting, text manipulation, images, play videos (manipulate frames realtime). 
+
+Hello Canvas:
+
+<canvas id='helloCanvas' width='500' height='300'>
+   Fallback!
+</canvas>
+
+Canvas is a container for contexts... the '2d' context is the only supported one so far. a 3d / webGL is in development
+Must be lowercase d!
+
+strokeText/FillText
+
+
+Paths lines and stroking!
+
+You'll draw a path, stroke that path, or both. 
+
+Canvas is an immediate context. (as soon as its drawn, it's forgotten)
+
+Transformations: 
+ * Can tranlate, rotate, and scale
+ * Clearing the canvas
+
+Canvas element > coordinate system inside the canvas > drawing.
+
+Also do custom transformations by using matrix algebra. 
+
+Clipping Region -> incredibly powerful, talked about later. 
+
+General transform method, takes a 2x3 matrix 
+
+//Gradients and patterns
+
+Can create linear and radial gradients. ...
+
+context.fillStyle = gradient / pattern / or css color
+
+Stroke and fill the path. 
+
+Stroke -> Creates an outline of the path
+Fill -> Fills the inside of the path
+
+//Compositing!
+How do you composite two things together?
+
+destination = what is already there
+source = what you are drawing
+
+different compositing methods 
+
+context.save() // Save the state of the context
+
+context.globalCompositeOperation = 
+
+//make temp changes and do drawing
+
+context.restore() // Restore the previous state
+
+When Save, it has a stack of contexts. 
+
+//Custom sliders
+Get the domElement of the slider and append it to a div???
+
+--Idea came from someone else
+
+//// Images
+
+Can scale images (in addition to the text)
+    context.drawImage can take scale parameters
+
+Can filter images
+    context.getImageData
+    loop over all of the pixels and set the reverse for rgb but not a
+    put the 
+
+Can draw a canvas into a canvas
+    More efficient to draw into an offscreen canvas (unscaled)
+    then draw (scaled) into the onscreen canvas
+    Drawing offscreen is ~2.5 times faster than drawing on screen.
+    offscreenCanvas = document.createElement('canvas');
+
+The Clipping region.
+    when you draw a rectangle, you can clip.
+    save context
+        set path
+        canvas.clip
+    restore
+    The clipping region is the context swiss army knife. Very useful!!!!
+
+
+Animation!
+    update
+    drawBackground
+    draw
+
+    use setInterval to do animation -> but it's not recommended since browsers have leeway to call differnet ways.
+
+    Webkit has an extension window.webkitRequestAnimationFrame (so the browser knows 
+    Gekco has one
+    W3C Stanard window.requestAnimationFrame...  (need a polyfill to invoke all of them, and fall back to setTimeout)
+
+
+Mr. Doob implemented a Stats object (also source of idea of embedded dom element.) http://mrdoob.com/
+
+Video!
+    can play
+   Can scale... offscreen video, draw every frame in onscreen canvas
+   Can transform and filter as you go real time. 
+   Can have all 3 simultaneously
+
