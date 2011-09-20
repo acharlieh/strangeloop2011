@@ -1,0 +1,67 @@
+Or the ramblings of a JavaScript Hacker.
+
+David Nolan - NYTimes
+
+some history:
+
+The Art of the Metaobject Protocol - How they designed the Lisp Object Protocol.
+
+    How does one design an API properly?
+    How do users swap in different decisions of how low level things work?
+
+Why are black boxes so hard to reuse?
+    Failure of OO Programming
+    Someone made a decision, we cannot reuse it, so we have to duplicate everything
+
+Hiding implementations is a good idea... but there is no such thing and the decision shows through
+    Instead of hiding, what if we divide and extract out the parts.
+    CLOS solved this with reflexion. A Meta interface to control the construction of the Base Class
+
+Design Goal: 
+    Seperate control over mapping decisions. 
+    
+
+For example. Spreadsheet cells are degenerate windows, but windows are heavy. 
+
+Going with the 70/80% thing
+
+Is there a world where Worse is not better.
+
+Another example: Adding Predicate Dispatch / Pattern matching from functional languages. 
+
+Necessity idea, only evaluate things you need to to find the correct predicate. 
+
+
+* I can't solve your problem, so I can't solve your question yourself. (provide hooks)
+
+A big mapping dilemma: Client side web programming... cannot program against the dom, but 
+
+Enter: ClosureScript trying to work toward the dilemma
+
+
+Solving the mapping dilemma:
+* How long do you languages let us delay critical decisions
+* How well do our languages pick strategies (code generation)
+...
+...
+
+
+Final thoughts: 
+
+Traditional OO needs to be thrown out. 
+Be humbled - it's worth it & familiar
+OO The good parts will become cleaner.
+Maybe need to learn (it's hard)
+
+Book Recommendation: 160 pages hard - "The Reasoned Schemer" - http://www.amazon.com/gp/product/0262562146/
+
+Maxwell's equations of Programming --- Lisp on one page
+
+Warning flags for bad mapping decisions?
+-- Practice builds awareness
+
+Stop and think about what do your design decisions mean for your problem and reusability of code. 
+
+"Your API should present the simplest interface possible, but be customizable when needed." (through hook or other method)
+
+How do we implement logic efficiently?
