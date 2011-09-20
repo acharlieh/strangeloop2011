@@ -1,0 +1,159 @@
+Sarah Allen
+@ultrasaurus
+
+Associations:
+Blazing Cloud -> Web and Mobile 
+Mighty verse -> startup
+Rails Bridge -> Not for profit/ Women outreach / teaching kids
+
+Teaching Code Literacy - Easy as Pie
+
+Coding Literacy... A way of problem solving by software engineers who write code. 
+
+Software has become a funtamental part of our world... cars, phones, etc. 
+
+Need to teach coding to kids in a similar vein as to why we teach photosynthesis, gravity so that they understand their world. Prepare them to solve the problems and reason about how our things in the world today. 
+
+///Why? 
+Coding has an intrinsic gratification... 
+
+Why Pie? 
+First pie = Pumpkin = easy
+Second pie = Blackberry = not as easy... but previous results helped not dissuade from trying again.
+
+Kingdom of Loathing... Don't have to have awesome graphics like Halo in order to have a fun game 
+-> Interactive fiction, with storyline and pun puns.
+
+Want kids to have the AppleIIe simple "AWESOME!!!" experience, in our current world 
+
+
+Why teach kids to code?
+-> Software part of our world
+-> Skill for thinking & communicating (a form in self expression)
+-> Before they start believing that they cannot program, show them they can! Approx 4th/5th grade
+---- study girls drop out of math approx 4th / 5th grade
+---- skill you don't know if you like it unless you try 
+-> By High school there are kids who outpaced adults. 
+----- Provide opportunity to any kid
+
+
+Why create a language?
+-> Want a small amount of code, to have a big effect, with a simple syntax
+
+First pass: Shoes in ruby it's a "real" language.
+--- Used in business can be a motivator for kids.
+--- Create desktop apps
+--- but desktop apps aren't interesting
+
+"we're all creating fiction here when we program"
+
+Kids wanted web/games and interesting. 
+So Created a DSL: pie-bakery.heroku.com
+
+///Pie: the language
+Directed graph games.
+Kid created a game of You are a tortilla chip looking for a wizard, needing to escape the hungry badger.
+
+gem install pie
+
+Creates a webapp to run locally. 
+Create a local git repository, commit commands, and push to huroku. Easy right?
+
+But conceptual hurdles
+--> What are we doing? Why are we doing it?
+--> Delays gratification. 
+
+
+Then created the pie-bakery. 
+--> Online write code, and press "Go"... either game runs in another panel, or you get an error. 
+
+Hard to do on their own, but social reduces fustration. 
+
+Wanted it to work on his phone too... and so pie now works on the phone (requires grown-up assisted build process... but can be made better).
+
+/// How pie works? DSL
+
+Core part is a place. 
+Elementry kids... writing non-text characters is hard... not good script readers yet. So using the sparse notation of ruby 1.9 is good for getting kids up and running fast. 
+
+So now you have a park object, you can then introduce dot syntax. 
+
+(use method_missing and metaprogramming in order to bind at runtime and make things easy for kids)
+
+park.path trees:north, river edge:east
+
+can create custom labels as well.
+
+
+Sinatra runs the game on the web app: 
+Rails IDE for the editor
+Rhodes (mobile app); http://rhomobile.com
+
+/// What I learned:
+Installation is boring! Need kids excited to get over the hurdle. 
+
+Need to teach kids different things (languages, environments, physical computing (having a lightbulb turn on)... teaching fundamentals?)
+-> offer over and over again at different times. 
+-> Gives different perspectives on ways to thing.
+
+Seek Immediate Gratification
+-> Get kids to find the intrinisic joy and accomplishment
+
+Errors are part of the user experience
+-> Every error is a teaching moment (Display the real error, then explain it whimsically)
+
+
+/// Next steps for pie
+
+* Snazzier games
+* How to create a path to get kids to write more code
+* IDE Improvements to get better gratification (Image finder instead of URL copying)
+
+* Would like to be teaching good practices
+-> Giving credit for images they use (automate without tedium)
+
+* Address Authentication
+-> If kids under 13, they don't have an email address. 
+
+Resources:
+http://github.com/blazingcloud/pie
+gem install pie
+
+github /pie-bakery
+pie-bakery.heroku.com
+
+github /mobile-pie
+rake run:iphone
+rake run:android
+
+@ultrasaurus
+http://teachingkids.railsbridge.org/
+
+
+Question time: 
+
+Introduced programming to World of Warcraft, so attached to the idea, but scripting is hard. How to fix? 
+// Come up with a long path
+// Come up with something related, but simpler? A story, screenshots? 
+// Try to teach coding through other methods (introduce as different things!)
+// Social networking... If this then that (hook up social networks to email introduce programming?)
+
+
+Different strategies for different age groups?
+//Little kids want to play. Visual 
+//Middle -> high school... Like humor, but don't want to talk down to them
+If mix big kids with little kids, need different activities, or have big kids helping the little kids.
+
+CSTA - Computer Science Teachers Assn... Good resources for curriculum for programming with K-12.
+
+Squeak Croquet, Scratch, Alice
+-> Avoided because of feedback of wanting to use a "real" language
+
+"Having a class in word is like having a class in pencil"
+
+flyingpaperclips.com -> First grade science experiments
+//Stop motion animation..
+//Potato prints..
+//Accessible and approachable.
+
+
